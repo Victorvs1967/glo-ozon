@@ -26,7 +26,27 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst cart = () => {\n  const cartBtn = document.getElementById('cart'),\n  cartModal = document.querySelector('.cart'),\n  cartClose = document.querySelector('.cart-close');\n\n  const openCart = () => cartModal.style.display = 'flex';\n  const closeCart = () => cartModal.style.display = '';\n\n  cartBtn.addEventListener('click', openCart);\n  cartClose.addEventListener('click', closeCart);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (cart);\n\n//# sourceURL=webpack://glo-ozon/./src/modules/cart.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _getData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getData */ \"./src/modules/getData.js\");\n\n\nconst cart = () => {\n  const cartBtn = document.getElementById('cart'),\n  cartModal = document.querySelector('.cart'),\n  cartClose = document.querySelector('.cart-close');\n\n  const openCart = () => cartModal.style.display = 'flex';\n  const closeCart = () => cartModal.style.display = '';\n\n  cartBtn.addEventListener('click', openCart);\n  cartClose.addEventListener('click', closeCart);\n\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (cart);\n\n//# sourceURL=webpack://glo-ozon/./src/modules/cart.js?");
+
+/***/ }),
+
+/***/ "./src/modules/getData.js":
+/*!********************************!*\
+  !*** ./src/modules/getData.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst getData = () => {\n  return fetch('https://g-ozon-default-rtdb.europe-west1.firebasedatabase.app/goods.json')\n    .then(response => response.json());\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getData);\n\n//# sourceURL=webpack://glo-ozon/./src/modules/getData.js?");
+
+/***/ }),
+
+/***/ "./src/modules/postData.js":
+/*!*********************************!*\
+  !*** ./src/modules/postData.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst postData = () => {\n  return fetch('http://localhost:3000/goods', {\n    method: 'POST',\n    body: JSON.stringify({\n      title: \"iMac 27' 5k'\",\n      price: 3000,\n      sale: true,\n      img: \"https://cdn1.ozone.ru/multimedia/c400/1023547851.jpg\",\n      category: \"Computers\"\n    }),\n    headers: {\n      'Content-type': 'application/json; charset=UTF-8',\n    },\n  }).then(res => res.json());\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (postData);\n\n//# sourceURL=webpack://glo-ozon/./src/modules/postData.js?");
 
 /***/ }),
 
@@ -36,7 +56,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst second = () => {\n  const cartBtn = document.querySelector('.cart');\n  console.dir(cartBtn);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (second);\n\n//# sourceURL=webpack://glo-ozon/./src/modules/second.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _getData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getData */ \"./src/modules/getData.js\");\n/* harmony import */ var _postData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./postData */ \"./src/modules/postData.js\");\n\n\n\nconst second = () => {\n  const cartBtn = document.querySelector('.cart');\n  \n  (0,_getData__WEBPACK_IMPORTED_MODULE_0__[\"default\"])().then(data => console.log(data));\n\n  cartBtn.addEventListener('click', () => {\n    (0,_postData__WEBPACK_IMPORTED_MODULE_1__[\"default\"])().then(data => console.log(data));\n    (0,_getData__WEBPACK_IMPORTED_MODULE_0__[\"default\"])().then(data => console.log(data));\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (second);\n\n//# sourceURL=webpack://glo-ozon/./src/modules/second.js?");
 
 /***/ })
 
