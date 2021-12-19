@@ -46,7 +46,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"searchFilter\": () => (/* binding */ searchFilter),\n/* harmony export */   \"catalogFilter\": () => (/* binding */ catalogFilter)\n/* harmony export */ });\nconst searchFilter = (goods, value) => {  \n  const result = Object.keys(goods).map(key => goods[key]);\n  return result.filter(item => item.title.includes(value));\n};\n\nconst catalogFilter = (goods, value) => {  \n  const result = Object.keys(goods).map(key => goods[key]);\n  return result.filter(item => item.category.includes(value));\n};\n\n\n//# sourceURL=webpack://glo-ozon/./src/modules/filters.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"searchFilter\": () => (/* binding */ searchFilter),\n/* harmony export */   \"catalogFilter\": () => (/* binding */ catalogFilter)\n/* harmony export */ });\nconst searchFilter = (goods, value) => {  \n  const result = Object.keys(goods).map(key => goods[key]);\n  return result.filter(item => item.title.toLowerCase().includes(value.toLowerCase()));\n};\n\nconst catalogFilter = (goods, value) => {  \n  const result = Object.keys(goods).map(key => goods[key]);\n  return result.filter(item => item.category.includes(value));\n};\n\n\n//# sourceURL=webpack://glo-ozon/./src/modules/filters.js?");
 
 /***/ }),
 
