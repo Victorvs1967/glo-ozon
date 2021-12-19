@@ -1,5 +1,5 @@
 const postData = () => {
-  return fetch('http://localhost:3000/goods', {
+  return fetch('https://g-ozon-default-rtdb.europe-west1.firebasedatabase.app/goods.json', {
     method: 'POST',
     body: JSON.stringify({
       title: "iMac 27' 5k'",
