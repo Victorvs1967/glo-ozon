@@ -1,13 +1,7 @@
-const postData = () => {
-  return fetch('https://g-ozon-default-rtdb.europe-west1.firebasedatabase.app/goods.json', {
+const postData = cart => {
+  return fetch('https://g-ozon-cart-default-rtdb.europe-west1.firebasedatabase.app/cart.json', {  
     method: 'POST',
-    body: JSON.stringify({
-      title: "iMac 27' 5k'",
-      price: 3000,
-      sale: true,
-      img: "https://cdn1.ozone.ru/multimedia/c400/1023547851.jpg",
-      category: "Computers"
-    }),
+    body: JSON.stringify(cart),
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },

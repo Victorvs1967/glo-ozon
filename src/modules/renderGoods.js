@@ -1,12 +1,15 @@
+import { toArray } from './utils';
+
 const goodsWrapper = document.querySelector('.goods');
 
 const renderGoods = goods => {
-  goodsWrapper.innerHTML = '';  
-  Object.keys(goods).map(key => {
-    const { title, img, price, sale } = goods[key];
+  sessionStorage.setItem('goods', JSON.stringify(toArray(goods)));
+  goodsWrapper.innerHTML = '';
+  toArray(goods).forEach(item => {
+    const { id, title, img, price, sale } = item;
     goodsWrapper.insertAdjacentHTML('beforeend', `
       <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-        <div class="card">
+        <div class="card" data-key="${id}">
           ${sale ? '<div class="card-sale">🔥Hot Sale🔥</div>' : ''}
           <div class="card-img-wrapper">
             <span class="card-img-top"
